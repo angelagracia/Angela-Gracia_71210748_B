@@ -1,0 +1,54 @@
+class Karyawan:
+    _nama = ""
+    _umur = 0
+    _jenisKelamin = None
+    _upahPerHari = None
+
+    def __init__(self,nama,umur):
+        self._nama = nama
+        self._umur = umur
+
+    def setNama(self,n):
+        self._nama = n
+    def setUmur(self,u):
+        self._umur = u
+    def setJenisKelamin(self,jk):
+        self._jenisKelamin = jk
+    def setUpahPerHari(self,uph):
+        self._upahPerHari = uph
+
+    def getNama(self):
+        return self._nama
+    def getUmur(self):
+        return self._umur
+    def getJenisKelamin(self):
+        return self._jenisKelamin
+    def getUpahPerHari(self):
+        return self._upahPerHari
+
+    def printInfo(self):
+        print("=======INFO=====")
+        print("Nama\t\t:", self.getNama())
+        print("Umur\t\t:", self.getUmur())
+        print("Jenis Kelamin\t:", self.getJenisKelamin())
+        print("Upah per Hari\t:", self.getUpahPerHari())
+
+    def hitungGajiBulanan(self, hari):
+        if hari != 30:
+            print("ERROR! Upah per Hari belum di inputkan")
+        else:
+            30*self._upahPerHari
+            print("Gaji Bulan ini: ")
+
+orang1 = Karyawan
+orang2 = Karyawan
+
+if __name__ == "__main__":
+    orang1 = Karyawan("Haniif", 90)
+    orang1.printInfo()
+    orang2 = Karyawan("Sindu", 190)
+    orang2.setJenisKelamin("Laki-laki")
+    orang2.setUpahPerHari(30000)
+    orang2.printInfo()
+    orang1.hitungGajiBulanan(28)
+    orang2.hitungGajiBulanan(30)
